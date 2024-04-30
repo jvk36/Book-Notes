@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<form action="/submit" method="POST">
+  <input type="text" name="bookTitle" placeholder="Enter Title...">
+  <input type="text" name="bookISBN" placeholder="Enter ISBN #...">
+  <br>
+      <textarea rows = "5" cols = "60" name = "bookReview" placeholder="Enter the Review text here..."></textarea>
+  <br>
+  <input id="btn" type="submit" value="Submit">
+</form>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.bookTitle && locals.bookReview && locals.bookISBN) { %>
+    <h1><%= bookTitle%></h1>
+    <img src="https://covers.openlibrary.org/b/isbn/<%= bookISBN %>-L.jpg" height="150" />
+    <h2>ISBN #: <%= bookISBN%></h2>
+    <br>
+    <textarea rows = "150" cols = "150" disabled><%= bookReview%></textarea>
+    <br>
+    <!-- <p><%= bookReview%></p> -->
+<% } %>
+<br />
+
+<form action="/viewDone" method="POST">
+    <br />
+    <input id="btn" type="submit" name="action" value="Done">
+    <input id="btn" type="submit" name="action" value="Delete">
+    <input id="btn" type="submit" name="action" value="Update">
+    <input type="hidden" name="bookTitle" value="<%= bookTitle %>" />
+    <input type="hidden" name="bookISBN" value="<%= bookISBN %>" />
+    <input type="hidden" name="bookReview" value="<%= bookReview %>" />
+ </form>
+
+ <%- include("partials/footer.ejs") %>

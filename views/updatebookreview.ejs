@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<form action="/Update" method="POST">
+<input type="hidden" name="bookTitle" value="<%= bookTitle %>">
+<input type="hidden" name="bookISBN" value="<%= bookISBN %>">
+<br>
+    <textarea rows = "5" cols = "60" name = "bookReview"><%= bookReview %></textarea>
+<br>
+<input id="btn" type="submit" value="Done">
+</form>
+  
+<%- include("partials/footer.ejs") %>

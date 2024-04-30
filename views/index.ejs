@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+<br />
+<form action="/new" method="GET">
+    <input id="btn" type="submit" value="New Review">
+</form>
+<h1>Reviews:</h1>
+<form action="/view" method="POST">
+    <% if (locals.bookData) { %>
+        <% for (let i=0; i<bookData.length; i++) { %>
+            <input type="submit" name="bookTitle" value="<%= bookData[i].title %>" class="posts"><br />
+        <% } %>    
+    <% } %>
+</form>
+</br>
+
+<%- include("partials/footer.ejs") %>
